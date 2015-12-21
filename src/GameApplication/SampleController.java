@@ -25,18 +25,17 @@ public class SampleController {
 	@FXML public void click(ActionEvent event) {
 		
 	try{
-		/*
-		//private int idGameVariable = idGameVariable.getText(); 
-		  String gameTitleVarLocal = gameTitleVar.getText();
-		 //private int idPlayerVariable = idPlayerVariable.getText();;
-		 
+		
+		
+		  String gameTitleVarLocal = gameTitleVar.getText();		 
+		  String firstNameVarLocal = lastNameVar.getText();
 		  String lastNameVarLocal = lastNameVar.getText();
 		  String addressVarLocal = addressVar.getText();
 		  String postalCodeVarLocal = postalCodeVar.getText();
 		  String provinceVarLocal = provinceVar.getText();
 		  String phoneNumberVarLocal =phoneNumberVar.getText();
 		
-		*/
+		
 		//1. get connection to database
 
 		//  String firstNameVarLocal = firstNameVar.getText();
@@ -54,12 +53,14 @@ public class SampleController {
 	
 	//*************************************************************************************************************************************
 
+		String ggfg =gameTitleVar.getText();
+		
 			//Inserting into Table called Game
-			String gameTable = "insert into game (game_title) values ("+gameTitleVar+")";
+			String gameTable = "insert into game (game_title) values ('"+gameTitleVarLocal+"')";
 			//Inserting into Table called Player
 			String playerTable = "insert into player (first_name, last_name, address, postal_code, province, phone_number) "
-							+ "values ('"+firstNameVar+"','"+lastNameVar+"','"+addressVar+"',"
-									+ " '"+postalCodeVar+"','"+provinceVar+"','"+phoneNumberVar+"');";
+							+ "values ('"+firstNameVarLocal+"','"+lastNameVarLocal+"','"+addressVarLocal+"',"
+									+ " '"+postalCodeVarLocal+"','"+provinceVarLocal+"','"+phoneNumberVarLocal+"');";
 						
 						myStmt.executeUpdate(gameTable);
 						myStmt.executeUpdate(playerTable);
